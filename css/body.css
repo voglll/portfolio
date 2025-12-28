@@ -1,17 +1,84 @@
 /* --- Global Body & Background Styles --- */
-/* Modern Industrial Mechanical Engineering Theme */
+/* Modern Industrial Mechanical Engineering Theme with Scroll Color Transition */
 body {
     font-family: "Poppins", Arial, sans-serif;
-    background: linear-gradient(145deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
     font-size: 18px;
     line-height: 1.8;
     font-weight: 400;
     color: #e8e8e8;
     overflow-x: hidden;
     position: relative;
-    background-attachment: fixed;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Base background - will be overlaid by gradient */
+    background-color: #1a252f;
+}
+
+/* Animated gradient background that shifts on scroll */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: linear-gradient(
+        135deg,
+        var(--bg-color-1, #1a252f) 0%,
+        var(--bg-color-2, #2c3e50) 25%,
+        var(--bg-color-3, #34495e) 50%,
+        var(--bg-color-4, #2c3e50) 75%,
+        var(--bg-color-5, #1a252f) 100%
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    transition: background 0.5s ease;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Interactive accent glow that follows scroll position */
+.scroll-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-glow::before {
+    content: '';
+    position: absolute;
+    top: var(--glow-y, 30%);
+    left: var(--glow-x, 70%);
+    width: 60vw;
+    height: 60vh;
+    background: radial-gradient(circle, rgba(0, 82, 204, 0.15) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: top 0.8s ease-out, left 0.8s ease-out;
+    filter: blur(60px);
+}
+
+.scroll-glow::after {
+    content: '';
+    position: absolute;
+    top: var(--glow-y2, 70%);
+    left: var(--glow-x2, 20%);
+    width: 50vw;
+    height: 50vh;
+    background: radial-gradient(circle, rgba(74, 139, 223, 0.12) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: top 1s ease-out, left 1s ease-out;
+    filter: blur(80px);
 }
 
 .page{
@@ -22,20 +89,6 @@ body {
     position: relative;
     z-index: 2;
     padding-bottom: 2em;
-}
-
-/* Subtle metallic gradient overlays */
-body:after, body:before {
-  position: fixed; content: ''; z-index: -1;
-  filter: blur(120px); -webkit-filter: blur(120px);
-}
-body:after {
-  top: -10vh; right: -20vw; width: 50vw; height: 50vh;
-  background: rgba(0, 82, 204, 0.08); transform: rotate(-30deg);
-}
-body:before {
-  top: 50vh; left: -20vw; width: 45vw; height: 45vh;
-  background: rgba(74, 139, 223, 0.06); transform: rotate(20deg);
 }
 
 body.menu-show {
