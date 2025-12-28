@@ -1,0 +1,503 @@
+/* --- Global Body & Background Styles --- */
+/* Modern Industrial Mechanical Engineering Theme */
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: linear-gradient(145deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
+    font-size: 18px;
+    line-height: 1.8;
+    font-weight: 400;
+    color: #e8e8e8;
+    overflow-x: hidden;
+    position: relative;
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.page{
+  background-color:transparent;
+}
+
+#colorlib-page {
+    position: relative;
+    z-index: 2;
+    padding-bottom: 2em;
+}
+
+/* Subtle metallic gradient overlays */
+body:after, body:before {
+  position: fixed; content: ''; z-index: -1;
+  filter: blur(120px); -webkit-filter: blur(120px);
+}
+body:after {
+  top: -10vh; right: -20vw; width: 50vw; height: 50vh;
+  background: rgba(0, 82, 204, 0.08); transform: rotate(-30deg);
+}
+body:before {
+  top: 50vh; left: -20vw; width: 45vw; height: 45vh;
+  background: rgba(74, 139, 223, 0.06); transform: rotate(20deg);
+}
+
+body.menu-show {
+  overflow: hidden; position: fixed; height: 100%; width: 100%; 
+}
+
+body .KW_progressContainer {
+  left: 0; width: 100%; height: 0.4em;
+  position: fixed; top: 0px; z-index: 999;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+body .KW_progressBar {
+  width: 0%; height: 100%; float: left;
+  background: linear-gradient(to right, #0052cc 0%, #4A8BDF 100%);
+  transition: width .6s ease; 
+}
+
+/* --- Particle Canvas - DISABLED for gear design --- */
+#particles-js {
+  display: none !important;
+}
+.hero #particles-js {
+    display: none !important;
+}
+
+/* --- Homepage Hero --- */
+.hero {
+  position: relative; height: 100vh;
+  display: flex; justify-content: center; align-items: center;
+  color: #e8e8e8; text-align: center; overflow: hidden;
+  background: transparent;
+}
+.hero-content {
+  position: relative; z-index: 2; 
+  max-width: 800px; padding: 20px;
+}
+.hero-title { font-size: 3.5em; font-weight: 700; margin-bottom: 0.5em; color: #fff; }
+.hero-subtitle { font-size: 1.5em; margin-bottom: 1em; color: #b0b0b0; }
+
+/* --- General Content Sections --- */
+.ftco-section {
+    padding: 7em 0;
+    position: relative;
+    z-index: 2;
+}
+.pt-0 { padding-top: 0 !important; }
+
+/* --- About Section Specifics --- */
+.about-section .author-img {
+    border-radius: 10px;
+}
+.cv-button {
+  display: inline-block; padding: 5px 15px;
+  color: #ffffff !important; background-color:#0052cc;
+  border: none; border-radius: 5px; font-size: 1.0em;
+  cursor: pointer; text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 82, 204, 0.3);
+  position: relative;
+  z-index: 100;
+}
+.cv-button:hover { background-color: #0066ff; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 82, 204, 0.4); }
+
+
+/* --- Parallax Shapes --- */
+.background-shape {
+    position: absolute; width: 500px; height: 500px;
+    background-color: rgba(0, 82, 204, 0.05);
+    border-radius: 50%; z-index: -1; 
+    opacity: 0; filter: blur(80px); -webkit-filter: blur(80px);
+    pointer-events: none;
+}
+.shape-1 { top: 50vh; left: -250px; }
+.shape-2 { top: 110vh; right: -250px; width: 400px; height: 400px; }
+
+#research-focus .media.block-6.services {
+    background: rgba(255, 255, 255, 0.03); border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+#research-focus .media.block-6.services:hover {
+    transform: translateY(-5px);
+    background: rgba(0, 82, 204, 0.1);
+    box-shadow: 0 12px 30px rgba(0, 82, 204, 0.2);
+    border-color: rgba(0, 82, 204, 0.3);
+}
+
+/* --- NEW --- STYLES FOR PROJECTS PAGE (RESTORED) --- */
+.project-header {
+    padding: 8em 0 4em 0;
+    text-align: center;
+}
+.project-header .interest-text {
+    font-family: 'SFMono-Regular', Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.9em;
+    letter-spacing: 0.1em;
+    color: #0052cc;
+    text-transform: uppercase;
+    margin-bottom: 2em;
+}
+.project-header .project-title-main {
+    font-size: 3.5em;
+    font-weight: 700;
+    color: #fff;
+}
+.project-card {
+    margin-bottom: 3em;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    padding: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 82, 204, 0.2);
+    border-color: rgba(0, 82, 204, 0.3);
+}
+.project-card .project-img {
+    display: block;
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 1.5em;
+    border-radius: 10px 10px 0 0;
+    box-shadow: none;
+}
+.project-card .project-text {
+    padding: 0 1.5em 1.5em;
+}
+.project-card .project-meta {
+    font-family: 'SFMono-Regular', Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.8em;
+    color: #0052cc;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+.project-card .project-title {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 0.5em 0;
+}
+.project-card .project-title a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+.project-card .project-title a:hover {
+    color: #4A8BDF;
+}
+.project-card .project-desc {
+    font-size: 1em;
+    color: #a0a0a0;
+}
+
+/* --- Footer --- */
+.site-footer {
+    position: relative;
+    z-index: 2;
+    padding: 5em 0;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2);
+}
+.site-footer .footer-content-centered {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 4em;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.site-footer .footer-heading {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    color: #fff;
+}
+.site-footer .footer-email {
+    margin-bottom: 1.5em;
+}
+.site-footer .footer-email a {
+    font-size: 1.2em;
+    color: #4A8BDF;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 3px;
+    transition: all 0.3s ease;
+}
+.site-footer .footer-email a:hover {
+    color: #0052cc;
+    border-bottom-color: rgba(0, 82, 204, 0.5);
+}
+.site-footer .footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.site-footer .footer-social a {
+    color: #e8e8e8;
+    font-size: 1.8em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.site-footer .footer-social a:hover {
+    color: #0052cc;
+    transform: translateY(-3px);
+}
+.site-footer .footer-bottom {
+    margin-top: 4em;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.5);
+}
+.site-footer .footer-bottom p {
+    margin: 0;
+}
+
+
+/* --- Desktop Navigation Bar --- */
+.desktop-header {
+    position: relative;
+    z-index: 100;
+    padding: 1.5em 0;
+    background: transparent;
+}
+.desktop-header .header-content {
+    display: flex; justify-content: space-between; align-items: center;
+}
+.desktop-header .logo-container .colorlib-logo {
+    font-size: 20px; text-transform: uppercase; color: #fff;
+    font-weight: 400; letter-spacing: 2px; display: flex; align-items: center;
+}
+.desktop-header .logo-container .logo-img {
+    width: 45px; height: 45px; border-radius: 50%;
+    margin-right: 15px; background-size: cover; background-position: center;
+    border: 2px solid rgba(0, 82, 204, 0.5);
+}
+.desktop-nav ul { margin: 0; padding: 0; list-style: none; display: flex; }
+.desktop-nav li { margin: 0 15px; }
+.desktop-nav a {
+    color: #e8e8e8; font-weight: 500; text-decoration: none;
+    position: relative; padding-bottom: 5px;
+}
+.desktop-nav a::after {
+    content: ''; position: absolute; width: 0; height: 2px;
+    bottom: 0; left: 0; background-color: #0052cc;
+    transition: width 0.3s ease;
+}
+.desktop-nav a:hover::after,
+.desktop-nav li.active a::after {
+    width: 100%;
+}
+.mobile-header { display: none; }
+.mobile-toggle { display: none !important; }
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+    .desktop-header { position: absolute; }
+    .desktop-nav { display: none; }
+    .mobile-toggle { display: block !important; float: right; }
+    .hero { margin-top: 0; padding-top: 80px; }
+}
+@media (max-width: 768px) {
+  .hero{ height: 80vh!important; }
+  .hero-title { font-size: 2.8em; }
+  .hero-subtitle { font-size: 1.5em; }
+  .about-section, .ftco-section { padding-top: 5em; }
+  .background-shape { display: none; }
+}
+
+
+/* NEW PROJECT PAGE */
+/* --- NEW --- Project Detail Page Styles --- */
+
+.project-main-content .project-detail-title {
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 1em;
+    line-height: 1.2;
+}
+
+.project-main-content h3 {
+    font-weight: 600;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.project-main-content blockquote {
+    border-left: 3px solid #4A8BDF;
+    padding-left: 20px;
+    font-style: italic;
+    font-size: 1.1em;
+    color: #333;
+    margin: 2em 0;
+}
+
+.project-sidebar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 120px; /* Adjust this value to set the distance from the top when it sticks */
+}
+
+.project-sidebar .sidebar-box {
+    margin-bottom: 2em;
+    padding: 1.5em;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.project-sidebar .sidebar-box h3 {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 1em;
+}
+
+.project-sidebar .sidebar-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.project-sidebar .sidebar-box ul li {
+    margin-bottom: 0.5em;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.project-sidebar .sidebar-box ul li span {
+    color: #0c081e;
+    font-weight: 500;
+    margin-right: 8px;
+}
+
+.project-sidebar .sidebar-box img {
+    border-radius: 10px;
+}
+
+
+
+
+/* --- NEW --- "Research Article" Layout Styles for Project Detail Pages --- */
+
+.project-article-header {
+    text-align: center;
+    padding: 3em 0;
+}
+
+.project-article-header .project-detail-title {
+    font-size: 3.5em;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+}
+
+.project-article-header .author-info {
+    font-family: 'SFMono-Regular', Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.9em;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
+.project-article-header .author-info span {
+    margin: 0 0.5em;
+}
+
+.project-article-content {
+    font-size: 1.1em; /* Slightly larger text for readability */
+    line-height: 1.9;
+}
+
+.project-article-content h3 {
+    font-weight: 600;
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+}
+
+.project-article-content img {
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.project-article-content blockquote {
+    border-left: 3px solid #4A8BDF;
+    padding-left: 20px;
+    font-style: italic;
+    font-size: 1.2em;
+    color: #333;
+    margin: 2em 0;
+}
+
+/* --- NEW --- Final, Corrected Author Box Styles --- */
+
+.article-separator {
+    margin: 4em 0;
+    border: none;
+    border-top: 1px solid rgba(12, 8, 30, 0.1);
+}
+
+/* 1. The main container is a flexbox */
+.article-author-box {
+    display: flex;
+    align-items: stretch; /* This is the key: tells children to stretch to the same height */
+    gap: 2em; /* Creates space between the image and the text */
+    margin-bottom: 4em;
+}
+
+/* 2. The image container */
+.article-author-box .author-image-container {
+    flex: 0 0 150px; /* Gives the image a fixed width of 150px */
+}
+
+/* 3. The image itself */
+.article-author-box .author-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-radius: 50%;
+}
+
+/* 4. The text container */
+.article-author-box .author-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centers the text within its available space */
+}
+
+.article-author-box .author-info-container h3 {
+    font-weight: 600;
+    font-size: 1.4em;
+    margin: 0 0 0.5em 0;
+}
+
+.article-author-box .author-info-container p {
+    font-size: 1em;
+    line-height: 1.7;
+    margin: 0;
+    color: #555;
+    text-align: left;
+}
+
+/* Responsive adjustment for mobile */
+@media (max-width: 767.98px) {
+    .article-author-box {
+        flex-direction: column; /* Stack the image on top of the text */
+        align-items: center;    /* Center the items */
+        text-align: center;
+    }
+    .article-author-box .author-image-container {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1.5em;
+    }
+    .article-author-box .author-info-container {
+        text-align: center;
+    }
+}
+
+/* --- NEW --- Styles for the References list on project pages --- */
+.project-references {
+    list-style-position: inside;
+    padding-left: 0;
+}
+.project-references li {
+    margin-bottom: 0.5em;
+}

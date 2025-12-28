@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Vogl - Lebenslauf</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        @page {
+            size: A4 portrait;
+            margin: 15mm 15mm 15mm 15mm;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 11pt;
+            line-height: 1.5;
+            color: #333;
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            padding: 15mm;
+            background: white;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                height: auto;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            @page {
+                margin: 15mm;
+            }
+        }
+        
+        .header {
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+            margin-bottom: 25px;
+            padding-bottom: 18px;
+            border-bottom: 2.5px solid #0052cc;
+            flex-direction: row-reverse;
+        }
+        
+        .photo-container {
+            width: 168px;
+            height: 216px;
+            overflow: hidden;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        
+        .photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            transform: scale(1.5);
+            transform-origin: center 30%;
+        }
+        
+        .header-content {
+            flex: 1;
+        }
+        
+        .header h1 {
+            font-size: 28pt;
+            color: #0052cc;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .header .subtitle {
+            font-size: 13pt;
+            color: #555;
+            margin-bottom: 12px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 10.5pt;
+        }
+        
+        .contact-info span {
+            color: #444;
+        }
+        
+        .summary {
+            font-size: 10.5pt;
+            color: #444;
+            margin-top: 14px;
+            line-height: 1.6;
+        }
+        
+        .two-column {
+            display: flex;
+            gap: 35px;
+            flex: 1;
+        }
+        
+        .main-column {
+            flex: 1.7;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .side-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .section {
+            margin-bottom: 28px;
+            flex: 1;
+        }
+        
+        .section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .section h2 {
+            font-size: 13pt;
+            color: #0052cc;
+            border-bottom: 1.5px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .entry {
+            margin-bottom: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .entry:last-child {
+            margin-bottom: 0;
+        }
+        
+        .entry-content {
+            flex: 1;
+        }
+        
+        .entry-date {
+            min-width: 110px;
+            text-align: right;
+            color: #555;
+            font-size: 10pt;
+            font-weight: 500;
+        }
+        
+        .entry h3 {
+            font-size: 11.5pt;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 4px;
+        }
+        
+        .entry .organization {
+            font-style: italic;
+            color: #555;
+            font-size: 10.5pt;
+        }
+        
+        .entry p, .entry ul {
+            font-size: 10.5pt;
+            color: #444;
+            margin-top: 5px;
+            line-height: 1.5;
+        }
+        
+        .entry ul {
+            margin-left: 18px;
+        }
+        
+        .entry li {
+            margin-bottom: 4px;
+        }
+        
+        .skill-category {
+            margin-bottom: 16px;
+        }
+        
+        .skill-category:last-child {
+            margin-bottom: 0;
+        }
+        
+        .skill-category h4 {
+            font-size: 10.5pt;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 4px;
+        }
+        
+        .skill-category p {
+            font-size: 10pt;
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        .language-item {
+            font-size: 10.5pt;
+            margin-bottom: 8px;
+        }
+        
+        .language-item strong {
+            color: #333;
+        }
+        
+        .language-item span {
+            color: #555;
+        }
+        
+        .interests {
+            font-size: 10pt;
+            color: #555;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="photo-container">
+            <img src="images/michael.jpg" alt="Michael Vogl" class="photo">
+        </div>
+        <div class="header-content">
+            <h1>Michael Vogl</h1>
+            <div class="subtitle">Student Maschinenbau</div>
+            <div class="contact-info">
+                <span>📧 michael.vogl11@gmail.com</span>
+                <span>📱 +49 1511 5692950</span>
+                <span>📍 Hammer 7, 93464 Tiefenbach</span>
+            </div>
+            <p class="summary">Maschinenbaustudent mit Vertiefungsrichtung Energie- und Prozesstechnik und praktischer Forschungserfahrung in Computational Fluid Dynamics (CFD) und Verbrennungsprozessen. Fundierte Kenntnisse in CAD-Design, Simulation und praktischer Ingenieursarbeit.</p>
+        </div>
+    </div>
+
+    <div class="two-column">
+        <div class="main-column">
+            <div class="section">
+                <h2>Berufserfahrung</h2>
+                
+                <div class="entry">
+                    <div class="entry-content">
+                        <h3>VSRP Forschungspraktikum – KAUST</h3>
+                        <div class="organization">King Abdullah University of Science and Technology, Thuwal, Saudi-Arabien</div>
+                        <ul>
+                            <li>CFD-Simulation eines Flame Spray HVOF-Prozesses mit Wasserstoff als Brennstoff</li>
+                            <li>Stoßrohr-Experimente mit Gaschromatographie (GC) Analyse zur Verbrennungskinetik</li>
+                        </ul>
+                    </div>
+                    <div class="entry-date">Aug – Dez 2025</div>
+                </div>
+                
+                <div class="entry">
+                    <div class="entry-content">
+                        <h3>Fachpraktikum – Handwerkskammer (HWK)</h3>
+                        <p>6-monatige Rotation durch Abteilungen: Metallbau, CNC-Drehen, Elektrotechnik, Schreinerei, Schweißen und CAD-Konstruktion</p>
+                    </div>
+                    <div class="entry-date">2021 – 2022</div>
+                </div>
+                
+                <div class="entry">
+                    <div class="entry-content">
+                        <h3>Praktikum als Technischer Zeichner</h3>
+                        <p>Technisches Zeichnen und CAD-Konstruktion von Maschinenbauteilen</p>
+                    </div>
+                    <div class="entry-date">Aug 2020</div>
+                </div>
+                
+                <div class="entry">
+                    <div class="entry-content">
+                        <h3>Sägewerk & Forstbetrieb – Familienbetrieb Vogl</h3>
+                        <p>Reparatur und Wartung von Francis- und Kaplan-Turbinen, Bau von Carports und Scheunen, Schreinerarbeiten</p>
+                    </div>
+                    <div class="entry-date">Laufend</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Ausbildung</h2>
+                
+                <div class="entry">
+                    <div class="entry-content">
+                        <h3>B.Eng. Maschinenbau – OTH Regensburg</h3>
+                        <p>Vertiefungsrichtung: Energie- und Prozesstechnik</p>
+                    </div>
+                    <div class="entry-date">Seit 2023</div>
+                </div>
+                
+                <div class="entry">
+                    <div class="entry-content">
+                        <h3>Fachabitur – Fachoberschule Cham</h3>
+                        <p>Allgemeine Fachhochschulreife, inkl. 6-monatiges HWK-Praktikum</p>
+                    </div>
+                    <div class="entry-date">2021 – 2023</div>
+                </div>
+                
+                <div class="entry">
+                    <div class="entry-content">
+                        <h3>Staatliche Wirtschaftsschule – Ludwig-Erhard-Schule Waldmünchen</h3>
+                    </div>
+                    <div class="entry-date">2017 – 2021</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-column">
+            <div class="section">
+                <h2>Technische Kenntnisse</h2>
+                <div class="skill-category">
+                    <h4>CAD-Software</h4>
+                    <p>Fusion 360, SolidWorks, Siemens NX, Solid Edge</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Simulation & CFD</h4>
+                    <p>Computational Fluid Dynamics, Verbrennungssimulation, Prozessmodellierung</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Programmierung & Tools</h4>
+                    <p>MATLAB/Simulink, MS Office</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Laborkenntnisse</h4>
+                    <p>Gaschromatographie, Stoßrohr-Experimente</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Sprachen</h2>
+                <div class="language-item"><strong>Deutsch:</strong> <span>Muttersprache (C2)</span></div>
+                <div class="language-item"><strong>Englisch:</strong> <span>Fortgeschritten (C1)</span></div>
+            </div>
+
+            <div class="section">
+                <h2>Interessen & Aktivitäten</h2>
+                <p class="interests">3D-Druck, Schach, Jagd (Ausbilder Waffenhandhabung), Drechseln & Schreinerei</p>
+            </div>
+
+            <div class="section">
+                <h2>Sonstiges</h2>
+                <p style="font-size: 10pt;">Führerschein Klasse B</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
