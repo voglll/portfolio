@@ -230,13 +230,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	scrollGlow.className = 'scroll-glow';
 	document.body.insertBefore(scrollGlow, document.body.firstChild);
 
-	// Color palettes for different scroll positions
+	// Enhanced color palettes - more dramatic transitions with blues, teals, and purples
 	const colorStops = [
-		{ pos: 0, colors: ['#1a252f', '#2c3e50', '#34495e', '#2c3e50', '#1a252f'] },
-		{ pos: 0.25, colors: ['#1a2a3a', '#2a4a5e', '#3a5a6e', '#2a4a5e', '#1a2a3a'] },
-		{ pos: 0.5, colors: ['#1a2f3a', '#2c4e5a', '#3a5e6a', '#2c4e5a', '#1a2f3a'] },
-		{ pos: 0.75, colors: ['#1f2a35', '#2e3e4a', '#3e4e5a', '#2e3e4a', '#1f2a35'] },
-		{ pos: 1, colors: ['#1a252f', '#2c3e50', '#34495e', '#2c3e50', '#1a252f'] }
+		{ pos: 0, colors: ['#1a252f', '#2c3e50', '#34495e', '#2c3e50', '#1a252f'] },      // Dark industrial blue
+		{ pos: 0.2, colors: ['#1a2d3d', '#234a5f', '#2d5a6f', '#234a5f', '#1a2d3d'] },    // Teal shift
+		{ pos: 0.4, colors: ['#1e2a3a', '#2a3f55', '#354d65', '#2a3f55', '#1e2a3a'] },    // Steel blue
+		{ pos: 0.6, colors: ['#1f2937', '#2d3a4a', '#3a485a', '#2d3a4a', '#1f2937'] },    // Cooler gray-blue
+		{ pos: 0.8, colors: ['#1a2535', '#283545', '#354555', '#283545', '#1a2535'] },    // Deep blue-gray
+		{ pos: 1, colors: ['#1a252f', '#2c3e50', '#34495e', '#2c3e50', '#1a252f'] }       // Back to start
 	];
 
 	// Interpolate between two colors
@@ -282,16 +283,20 @@ document.addEventListener('DOMContentLoaded', () => {
 				document.body.style.setProperty('--bg-color-4', colors[3]);
 				document.body.style.setProperty('--bg-color-5', colors[4]);
 				
-				// Move glow positions based on scroll
-				const glowY = 20 + scrollPercent * 60;
-				const glowX = 60 + Math.sin(scrollPercent * Math.PI * 2) * 20;
-				const glowY2 = 80 - scrollPercent * 50;
-				const glowX2 = 30 + Math.cos(scrollPercent * Math.PI * 2) * 15;
+				// Enhanced glow movement - more dynamic with sine waves
+				const glowY = 25 + scrollPercent * 50 + Math.sin(scrollPercent * Math.PI * 3) * 10;
+				const glowX = 65 + Math.sin(scrollPercent * Math.PI * 2) * 25;
+				const glowY2 = 75 - scrollPercent * 45 + Math.cos(scrollPercent * Math.PI * 4) * 8;
+				const glowX2 = 25 + Math.cos(scrollPercent * Math.PI * 2.5) * 20;
 				
 				scrollGlow.style.setProperty('--glow-y', `${glowY}%`);
 				scrollGlow.style.setProperty('--glow-x', `${glowX}%`);
 				scrollGlow.style.setProperty('--glow-y2', `${glowY2}%`);
 				scrollGlow.style.setProperty('--glow-x2', `${glowX2}%`);
+				
+				// Subtle glow intensity change based on scroll
+				const glowOpacity = 0.35 + Math.sin(scrollPercent * Math.PI) * 0.15;
+				scrollGlow.style.opacity = glowOpacity;
 				
 				ticking = false;
 			});
