@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <defs>
+    <style>
+      text { font-family: 'Segoe UI', Arial, sans-serif; }
+      .dim-text { font-size: 14px; fill: #1a5276; font-weight: 600; }
+      .label-text { font-size: 15px; fill: #333; font-weight: 500; }
+      .ignition-text { font-size: 13px; fill: #c0392b; font-weight: 600; }
+      .endview-text { font-size: 14px; fill: #1a1a1a; font-weight: 700; }
+      .dim-line { stroke: #1a5276; stroke-width: 1.5; marker-end: url(#arrowBlue); marker-start: url(#arrowBlueRev); }
+      .dim-line-single { stroke: #1a5276; stroke-width: 1.5; marker-end: url(#arrowBlue); }
+      .dash-line { stroke: #1a5276; stroke-width: 1; stroke-dasharray: 6,4; }
+    </style>
+    <marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#1a5276"/>
+    </marker>
+    <marker id="arrowBlueRev" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto-start-reverse">
+      <path d="M8,0 L0,3 L8,6 Z" fill="#1a5276"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="#1e2a38" rx="8"/>
+
+  <!-- Shock Tube Body -->
+  <rect x="100" y="130" width="480" height="140" rx="3" fill="#a3c4e0" stroke="#6a9cc7" stroke-width="2" opacity="0.9"/>
+
+  <!-- Ignition source dot -->
+  <circle cx="170" cy="200" r="7" fill="#c0392b"/>
+  <!-- Ignition arrow -->
+  <line x1="177" y1="195" x2="220" y2="155" stroke="#c0392b" stroke-width="1.8"/>
+  <polygon points="220,155 213,160 217,165" fill="#c0392b"/>
+  <!-- Ignition label -->
+  <text x="225" y="145" class="ignition-text">Ignition source (1 mm dia, 2 mJ)</text>
+
+  <!-- Oxyhydrogen mixture label -->
+  <text x="340" y="200" text-anchor="middle" class="label-text" fill="#1a3a5c">Oxyhydrogen mixture</text>
+  <text x="340" y="222" text-anchor="middle" class="label-text" fill="#1a3a5c">Fill pressure (6 – 18 psi)</text>
+
+  <!-- Dimension: 15 mm offset -->
+  <line x1="100" y1="110" x2="100" y2="125" class="dash-line"/>
+  <line x1="170" y1="110" x2="170" y2="125" class="dash-line"/>
+  <line x1="100" y1="115" x2="170" y2="115" class="dim-line"/>
+  <text x="135" y="108" text-anchor="middle" class="dim-text">15 mm</text>
+
+  <!-- Dimension: 165 mm total length -->
+  <line x1="100" y1="280" x2="100" y2="305" class="dash-line"/>
+  <line x1="580" y1="280" x2="580" y2="305" class="dash-line"/>
+  <line x1="100" y1="298" x2="580" y2="298" class="dim-line"/>
+  <text x="340" y="325" text-anchor="middle" class="dim-text">165 mm</text>
+
+  <!-- Dimension: 5 mm height (left side) -->
+  <line x1="60" y1="130" x2="90" y2="130" class="dash-line"/>
+  <line x1="60" y1="270" x2="90" y2="270" class="dash-line"/>
+  <line x1="75" y1="130" x2="75" y2="270" class="dim-line"/>
+  <text x="55" y="205" text-anchor="middle" class="dim-text" transform="rotate(-90 55 205)">5 mm</text>
+
+  <!-- Dashed centreline -->
+  <line x1="100" y1="200" x2="170" y2="200" class="dash-line"/>
+
+  <!-- End View -->
+  <text x="690" y="125" text-anchor="middle" class="endview-text" fill="#ddd">END VIEW</text>
+  <circle cx="690" cy="210" r="55" fill="none" stroke="#6a9cc7" stroke-width="2"/>
+  <circle cx="690" cy="210" r="54" fill="#a3c4e0" opacity="0.3"/>
+  <!-- 6 mm diameter line -->
+  <line x1="651" y1="247" x2="729" y2="173" stroke="#1a5276" stroke-width="1.5"/>
+  <polygon points="651,247 658,244 654,240" fill="#1a5276"/>
+  <polygon points="729,173 722,176 726,180" fill="#1a5276"/>
+  <text x="710" y="230" class="dim-text">6 mm</text>
+</svg>
